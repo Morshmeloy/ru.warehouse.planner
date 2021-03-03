@@ -1,52 +1,13 @@
 package ru.warehouse.planner;
 
 public class Point {
-    private int x = 0;
+    double X;
+    double Y;
 
-    private int y = 0;
-
-//    private int z = 0;
-
-    public int GetX() {
-        return x;
+    public Point(double X, double Y) {
+        this.X = X;
+        this.Y = Y;
     }
-
-    public void SetX(int x) {
-        this.x = x;
-    }
-
-    public int GetY() {
-        return y;
-    }
-
-    public void SetY(int y) {
-        this.y = y;
-    }
-
-//    public int GetZ() {
-//        return z;
-//    }
-//
-//    public void SetZ(int Z) {
-//        this.z = z;
-//    }
-
-    @Override
-    public String toString() {
-        return "Point{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
-    }
-
-    /*
-      1. Значение в переменную z записывается из той же самой переменной z
-      2. Именование методов. В соответстствии с соглашениями по написанию приложений на Java, методы именуются с маленькой буквы
-      3. Избыточная явная инициализация простых типов данных. Тип int по умолчанию будет проинициализирован значением 0
-      4. Не верно выбран тип данных (float)
-      5. Точка, в отличии от предмета не может перемещаться в пространстве, это всего лишь абстракция координаты относительно НСК. Объект точки должен быть иммутабельным
-      6. Отсутствиует конструктор с параметрами для инициализации объекта
-      7. Для иммутабельного объекта характерен модификатор final на всех его полях
-     */
 
 }
+
