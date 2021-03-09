@@ -14,7 +14,7 @@ public class Main {
             points[numberOfPoint-1]=new Point(scanner.nextDouble(), scanner.nextDouble());
             numberOfPoint--;
         }
-        
+
 
     }
 }
