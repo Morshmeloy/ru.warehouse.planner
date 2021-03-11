@@ -8,6 +8,5 @@ public class Point {
         this.X = X;
         this.Y = Y;
     }
-
 }
 
