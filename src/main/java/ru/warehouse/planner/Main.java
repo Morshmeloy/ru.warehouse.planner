@@ -19,15 +19,15 @@ public class Main {
         }
         Text.WhatIsHightOfWarehouse();
         AnAreaCalculator SizeOfWarehouse = new AnAreaCalculator();
-        SizeOfWarehouse.SizeOfWarehouse(points, scanner.nextDouble());
-
+        //SizeOfWarehouse.SizeOfWarehouse(points, scanner.nextDouble());
+        System.out.println(SizeOfWarehouse.SizeOfWarehouse(points,scanner.nextDouble()));
         Text.WhatIsTemperatureOfWarehouse();
         Text.WhatIsHumidityInWarehouse();
 
         Conditions conditionsForWarehous = new Conditions();
         conditionsForWarehous.ConditionsOfWarehouse(scanner.nextDouble(), scanner.nextInt());
         Conditions conditionsForProduct = new Conditions();
-        
+
         Text.WhatIsTheSizeOfProduct();
 
         conditionsForProduct.Size(scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble());
