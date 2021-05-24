@@ -1,16 +1,9 @@
 package ru.warehouse.planner;
 
 public class Text {
-    public static void NumberOfPoints() {
-        System.out.println("Введите количество точек необходимых для постройки Помещения ");
-    }
 
-    public static void TextForPoint(int numberOfPoint) {
-        System.out.println("Введите координаты для " + numberOfPoint);
-    }
-    public static void WhatIsHightOfWarehouse(){
-        System.out.println("Введите высоту складского помешения");
-    }
+    public static void Squere(){System.out.println("Введите: длинну высоту и ширину помещения");}
+
     public static void WhatIsTemperatureOfWarehouse() {
         System.out.println("Какая сейчас температура на складу ?");
     }
@@ -31,7 +24,25 @@ public class Text {
         System.out.println("Введите ширину,длину,высоту товара");
     }
 
-    public static void WhatIsData() {
-        System.out.println("Напише срок хранения ");
-    }
+    public static void WhatIsTypeOfProduct(){System.out.println("Введите тип вашего товара:\nПродукты питания\nХимические товары\nЭлектроника");}
+
+    public static void WeightOfProduct(){System.out.println("Введите массу товара");}
+
+    public static void WhatIsDataOfEndings() {System.out.println("Напише срок окончания хранения (год,месяц,день)");}
+
+    public static void WhatIsDataOfStart(){System.out.println("Напишите дату погрузки(Год,месяц,день)");}
+
+    public static void NameOfProduct(){System.out.println("НАзвание вашего товара"); }
+
+    public static void GreetingsWhatIsNext(){System.out.println("Здраствуйте С чем вы хотите работать ?\nСклад\nТовар");}
+
+    public static void ConditionsOfWarehouse(){System.out.println("С какими параметрами Складского помещения вы хотитеработать\nРазмер\nТемпература\nВлажность");}
+
+    public static void RiseOrDown(){System.out.println("Вы хотите изменить ?\nПовысить?\nПонизить");}
+
+    public static void Number(){System.out.println("Введите насколько хотите изменить");}
+
+    public static void Conditions(){System.out.println("Какие параметры товара вы хотите увидеть ?\nРазмер\nТребуемая температура\nТребуемая влажность\nДата поступления\nОкончания хранения\nМасса\nСколько товаров на складе\nТип товара?");}
+
+
 }
