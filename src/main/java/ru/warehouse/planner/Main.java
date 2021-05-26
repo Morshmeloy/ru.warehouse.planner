@@ -7,46 +7,46 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         //Первоначальные настройки параметров склада
-        Text.WhatIsHumidityInWarehouse();
-        Text.WhatIsTemperatureOfWarehouse();
-        Text.Squere();
+        TextPrinter.WhatIsHumidityInWarehouse();
+        TextPrinter.WhatIsTemperatureOfWarehouse();
+        TextPrinter.Square();
 
         ConditionsOfWarehouse conditionsOfWarehouse = new ConditionsOfWarehouse();
         conditionsOfWarehouse.ConditionsOfWarehouse(scanner.nextDouble(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble());
 
         //Здесь вносить 1 продукт ещё не посылаеться на стелаж или имеет возможность создавать несколько
-        Text.NameOfProduct();
-        Text.WhatIsTemperatureForProduct();
-        Text.WhatIsHumidityForProduct();
-        Text.WhatIsTheSizeOfProduct();
-        Text.WhatIsDataOfStart();
-        Text.WhatIsDataOfEndings();
-        Text.WeightOfProduct();
-        Text.WhatIsTypeOfProduct();
+        TextPrinter.NameOfProduct();
+        TextPrinter.WhatIsTemperatureForProduct();
+        TextPrinter.WhatIsHumidityForProduct();
+        TextPrinter.WhatIsTheSizeOfProduct();
+        TextPrinter.WhatIsDataOfStart();
+        TextPrinter.WhatIsDataOfEndings();
+        TextPrinter.WeightOfProduct();
+        TextPrinter.WhatIsTypeOfProduct();
         ConditionsOfProduct conditionForProduct = new ConditionsOfProduct();
         conditionForProduct.ConditionsOfProduct(scanner.next(), scanner.nextDouble(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(),scanner.nextInt(),scanner.nextInt(),scanner.nextInt(), scanner.nextInt(),scanner.next());
 
-        Text.GreetingsWhatIsNext();
+        TextPrinter.GreetingsWhatIsNext();
         ArrayList<ConditionsOfProduct> products = new ArrayList<>();
         switch (scanner.next()) {
             //Здесь хочу настроить установку палетов и стелажей и изменнение если они стоят
             case ("Склад"): {
-                Text.ConditionsOfWarehouse();
+                TextPrinter.ConditionsOfWarehouse();
                 switch (scanner.next()) {
                     case ("Размер"): {
                         System.out.println("Размер склада: " + ConditionsOfWarehouse.SizeOfWarehouse);
                         break;
                     }
                     case ("Температура"): {
-                        Text.RiseOrDown();//Можно было бы и через знак сделать ,но так вроде легче
+                        TextPrinter.RiseOrDown();//Можно было бы и через знак сделать ,но так вроде легче
                         switch (scanner.next()) {
                             case ("Повысить"): {
-                                Text.Number();
+                                TextPrinter.Number();
                                 ConditionsOfWarehouse.TemperatureOfWarehouse = ConditionsOfWarehouse.TemperatureOfWarehouse + scanner.nextInt();
                                 break;
                             }
                             case ("Понизить"): {
-                                Text.Number();
+                                TextPrinter.Number();
                                 ConditionsOfWarehouse.TemperatureOfWarehouse = ConditionsOfWarehouse.TemperatureOfWarehouse - scanner.nextInt();
                                 break;
                             }
@@ -59,15 +59,15 @@ public class Main {
                         break;
                     }
                     case ("Влажность"): {
-                        Text.RiseOrDown();
+                        TextPrinter.RiseOrDown();
                         switch (scanner.next()) {
                             case ("Повысить"): {
-                                Text.Number();
+                                TextPrinter.Number();
                                 ConditionsOfWarehouse.HumidityOfWarehouse = ConditionsOfWarehouse.HumidityOfWarehouse + scanner.nextInt();
                                 break;
                             }
                             case ("Понизить"): {
-                                Text.Number();
+                                TextPrinter.Number();
                                 ConditionsOfWarehouse.HumidityOfWarehouse = ConditionsOfWarehouse.HumidityOfWarehouse - scanner.nextInt();
                                 break;
                             }
@@ -84,7 +84,7 @@ public class Main {
             }
             //Дальше идёт описания товара надо сделать с выбором
             case ("Товар"): {
-                Text.Conditions();
+                TextPrinter.Conditions();
                 //Добавления товара в Arraylist
                 //Добавления товара на палеты и стелажы
                 while (scanner.next() != "Выход") {
