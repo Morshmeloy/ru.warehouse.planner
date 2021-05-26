@@ -1,5 +1,6 @@
 package ru.warehouse.planner;
 
+//По примеру Rack
 public class Pallet {
    static int Size;//размер Палета тоесть какой размер товаров может поместиться
    static int Fullness=0;

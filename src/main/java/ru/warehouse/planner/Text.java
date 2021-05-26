@@ -1,5 +1,6 @@
 package ru.warehouse.planner;
 
+// использовать вариант из ветки enum_used
 public class Text {
 
     public static void Squere(){System.out.println("Введите: длинну высоту и ширину помещения");}

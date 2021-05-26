@@ -1,17 +1,38 @@
 package ru.warehouse.planner;
 
 public class Rack {
-    static int Size;//размер стелажа
-    static int Fullness=0;
-    static int LimitOfShelf;
-    static int NumbersOfShelfs;
-    static int LimitOfRack;
-//Здесь хочу выбор высоты палета чтобы вставлять количество полок но ведь их можно делать одни больше другие меньше и из различных материалов тоесть лимит прочности разный
-    public void Rack(int Hight,int Lenght,int Fullness,int NumbersOfShelfs){
-        Size=Lenght*Hight;
-        Size=this.Size;
-        Fullness=this.Fullness;
-        NumbersOfShelfs=this.NumbersOfShelfs;
+    private final int length;
+
+    private final int width;
+
+    private final int height;
+
+    private final int mass;
+
+    public Rack(int length, int width, int height, int mass) {
+        this.length = length;
+        this.width = width;
+        this.height = height;
+        this.mass = mass;
     }
-    public void AddToRack(int weightOfProduct){if(Fullness+weightOfProduct!=LimitOfRack){Fullness=Fullness+weightOfProduct;}}
+
+    public int getLength() {
+        return length;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getMass() {
+        return mass;
+    }
+
+    public int square() {
+        return this.width * this.length;
+    }
 }

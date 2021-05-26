@@ -3,6 +3,7 @@ package ru.warehouse.planner;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+// надо поправить
 public class ConditionsOfWarehouse{
   static   double TemperatureOfWarehouse;
   static   int HumidityOfWarehouse;
