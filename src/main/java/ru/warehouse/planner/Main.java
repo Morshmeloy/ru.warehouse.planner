@@ -5,48 +5,48 @@ import java.util.Scanner;
 public class Main {
     public static void main(String... args) {
         Scanner scanner = new Scanner(System.in);
-
         //Первоначальные настройки параметров склада
-        TextPrinter.WhatIsHumidityInWarehouse();
-        TextPrinter.WhatIsTemperatureOfWarehouse();
-        TextPrinter.Square();
+        TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_HUMIDITY_IN_WAREHOUSE);
+        TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_TEMPERATURE_OF_WAREHOUSE);
+        TextPrinter.print(TextPrinter.MessageKey.SQUARE);
 
         ConditionsOfWarehouse conditionsOfWarehouse = new ConditionsOfWarehouse();
         conditionsOfWarehouse.ConditionsOfWarehouse(scanner.nextDouble(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble());
 
         //Здесь вносить 1 продукт ещё не посылаеться на стелаж или имеет возможность создавать несколько
-        TextPrinter.NameOfProduct();
-        TextPrinter.WhatIsTemperatureForProduct();
-        TextPrinter.WhatIsHumidityForProduct();
-        TextPrinter.WhatIsTheSizeOfProduct();
-        TextPrinter.WhatIsDataOfStart();
-        TextPrinter.WhatIsDataOfEndings();
-        TextPrinter.WeightOfProduct();
-        TextPrinter.WhatIsTypeOfProduct();
+        TextPrinter.print(TextPrinter.MessageKey.NAME_OF_PRODUCT);
+        TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_TEMPERATURE_FOR_PRODUCT);
+        TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_HUMUDITY_FOR_PRODUCT);
+        TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_THE_SIZE_OF_PRODUCT);
+        TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_DATA_OF_START);
+        TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_DATA_OF_ENDINGS);
+        TextPrinter.print(TextPrinter.MessageKey.WEIGHT_OF_PRODUCT);
+        TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_TYPE_OF_PRODUCT);
         ConditionsOfProduct conditionForProduct = new ConditionsOfProduct();
         conditionForProduct.ConditionsOfProduct(scanner.next(), scanner.nextDouble(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(),scanner.nextInt(),scanner.nextInt(),scanner.nextInt(), scanner.nextInt(),scanner.next());
 
-        TextPrinter.GreetingsWhatIsNext();
+        TextPrinter.print(TextPrinter.MessageKey.GREETINGS_WHAT_IS_NEXT);
         ArrayList<ConditionsOfProduct> products = new ArrayList<>();
         switch (scanner.next()) {
             //Здесь хочу настроить установку палетов и стелажей и изменнение если они стоят
             case ("Склад"): {
-                TextPrinter.ConditionsOfWarehouse();
+                TextPrinter.print(TextPrinter.MessageKey.CONDITIONS_OF_WAREHOUSE);
                 switch (scanner.next()) {
                     case ("Размер"): {
                         System.out.println("Размер склада: " + ConditionsOfWarehouse.SizeOfWarehouse);
                         break;
                     }
                     case ("Температура"): {
-                        TextPrinter.RiseOrDown();//Можно было бы и через знак сделать ,но так вроде легче
+                        TextPrinter.print(TextPrinter.MessageKey.RISE_OR_DOWN);//Можно было бы и через знак сделать ,но так вроде легче
                         switch (scanner.next()) {
                             case ("Повысить"): {
-                                TextPrinter.Number();
+                                TextPrinter.print(TextPrinter.MessageKey.NUMBER);
                                 ConditionsOfWarehouse.TemperatureOfWarehouse = ConditionsOfWarehouse.TemperatureOfWarehouse + scanner.nextInt();
                                 break;
                             }
                             case ("Понизить"): {
                                 TextPrinter.Number();
+                                TextPrinter.print(TextPrinter.MessageKey.NUMBER);
                                 ConditionsOfWarehouse.TemperatureOfWarehouse = ConditionsOfWarehouse.TemperatureOfWarehouse - scanner.nextInt();
                                 break;
                             }
@@ -59,15 +59,15 @@ public class Main {
                         break;
                     }
                     case ("Влажность"): {
-                        TextPrinter.RiseOrDown();
+                        TextPrinter.print(TextPrinter.MessageKey.RISE_OR_DOWN);
                         switch (scanner.next()) {
                             case ("Повысить"): {
-                                TextPrinter.Number();
+                                TextPrinter.print(TextPrinter.MessageKey.NUMBER);
                                 ConditionsOfWarehouse.HumidityOfWarehouse = ConditionsOfWarehouse.HumidityOfWarehouse + scanner.nextInt();
                                 break;
                             }
                             case ("Понизить"): {
-                                TextPrinter.Number();
+                                TextPrinter.print(TextPrinter.MessageKey.NUMBER);
                                 ConditionsOfWarehouse.HumidityOfWarehouse = ConditionsOfWarehouse.HumidityOfWarehouse - scanner.nextInt();
                                 break;
                             }
@@ -84,7 +84,7 @@ public class Main {
             }
             //Дальше идёт описания товара надо сделать с выбором
             case ("Товар"): {
-                TextPrinter.Conditions();
+                TextPrinter.print(TextPrinter.MessageKey.CONDITIONS);
                 //Добавления товара в Arraylist
                 //Добавления товара на палеты и стелажы
                 while (scanner.next() != "Выход") {

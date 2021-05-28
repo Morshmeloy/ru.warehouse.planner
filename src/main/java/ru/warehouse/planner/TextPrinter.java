@@ -16,7 +16,6 @@ public class TextPrinter {
         WHAT_IS_TEMPERATURE_FOR_PRODUCT,
         WHAT_IS_THE_SIZE_OF_PRODUCT,
         WHAT_IS_HUMUDITY_FOR_PRODUCT,
-        WHAT_IS_HUMIDITY_FOR_PRODUCT,
         WHAT_IS_TYPE_OF_PRODUCT,
         WEIGHT_OF_PRODUCT,
         WHAT_IS_DATA_OF_ENDINGS,
@@ -38,7 +37,6 @@ public class TextPrinter {
         messages.put(MessageKey.WHAT_IS_TEMPERATURE_FOR_PRODUCT, "Какая температура необходима товару ?");
         messages.put(MessageKey.WHAT_IS_THE_SIZE_OF_PRODUCT, "Введите ширину,длину,высоту товара");
         messages.put(MessageKey.WHAT_IS_HUMUDITY_FOR_PRODUCT,"Какая влажность необхадима для товара ?");
-        messages.put(MessageKey.WHAT_IS_HUMIDITY_FOR_PRODUCT,"Какая влажность необхадима для товара ?");
         messages.put(MessageKey.WHAT_IS_TYPE_OF_PRODUCT,"Введите тип вашего товара:\nПродукты питания\nХимические товары\nЭлектроника");
         messages.put(MessageKey.WEIGHT_OF_PRODUCT,"Введите массу товара");
         messages.put(MessageKey.WHAT_IS_DATA_OF_ENDINGS,"Напише срок окончания хранения (год,месяц,день)");
