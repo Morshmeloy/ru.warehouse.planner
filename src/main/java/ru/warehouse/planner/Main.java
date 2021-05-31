@@ -1,4 +1,5 @@
 package ru.warehouse.planner;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,7 +12,9 @@ public class Main {
         TextPrinter.print(TextPrinter.MessageKey.SQUARE);
 
         ConditionsOfWarehouse conditionsOfWarehouse = new ConditionsOfWarehouse();
-        conditionsOfWarehouse.ConditionsOfWarehouse(scanner.nextDouble(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble());
+        //Все условия Склада
+
+        //  conditionsOfWarehouse.ConditionsOfWarehouse(scanner.nextDouble(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble());
 
         //Здесь вносить 1 продукт ещё не посылаеться на стелаж или имеет возможность создавать несколько
         TextPrinter.print(TextPrinter.MessageKey.NAME_OF_PRODUCT);
@@ -23,7 +26,8 @@ public class Main {
         TextPrinter.print(TextPrinter.MessageKey.WEIGHT_OF_PRODUCT);
         TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_TYPE_OF_PRODUCT);
         ConditionsOfProduct conditionForProduct = new ConditionsOfProduct();
-        conditionForProduct.ConditionsOfProduct(scanner.next(), scanner.nextDouble(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(),scanner.nextInt(),scanner.nextInt(),scanner.nextInt(), scanner.nextInt(),scanner.next());
+        //Все условия товара
+//        conditionForProduct.ConditionsOfProduct(scanner.next(), scanner.nextDouble(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(),scanner.nextInt(),scanner.nextInt(),scanner.nextInt(), scanner.nextInt(),scanner.next());
 
         TextPrinter.print(TextPrinter.MessageKey.GREETINGS_WHAT_IS_NEXT);
         ArrayList<ConditionsOfProduct> products = new ArrayList<>();
@@ -33,7 +37,7 @@ public class Main {
                 TextPrinter.print(TextPrinter.MessageKey.CONDITIONS_OF_WAREHOUSE);
                 switch (scanner.next()) {
                     case ("Размер"): {
-                        System.out.println("Размер склада: " + ConditionsOfWarehouse.SizeOfWarehouse);
+                        System.out.println("Размер склада: " + "\nШирина:" + conditionsOfWarehouse.getWidthOfWarehouse() + "\nДлина:" + conditionsOfWarehouse.getLengthOfWarehouse() + "\nВысота:" + conditionsOfWarehouse.getHeightOfWarehouse());
                         break;
                     }
                     case ("Температура"): {
@@ -41,21 +45,21 @@ public class Main {
                         switch (scanner.next()) {
                             case ("Повысить"): {
                                 TextPrinter.print(TextPrinter.MessageKey.NUMBER);
-                                ConditionsOfWarehouse.TemperatureOfWarehouse = ConditionsOfWarehouse.TemperatureOfWarehouse + scanner.nextInt();
+                                conditionsOfWarehouse.setTemperatureOfWarehouse(conditionForProduct.getTemperatureOfProduct() + scanner.nextInt());
                                 break;
                             }
                             case ("Понизить"): {
-                                TextPrinter.Number();
                                 TextPrinter.print(TextPrinter.MessageKey.NUMBER);
-                                ConditionsOfWarehouse.TemperatureOfWarehouse = ConditionsOfWarehouse.TemperatureOfWarehouse - scanner.nextInt();
+                                conditionsOfWarehouse.setTemperatureOfWarehouse(conditionsOfWarehouse.getTemperatureOfWarehouse() - scanner.nextInt());
                                 break;
                             }
                             case ("Показать Температуру"): {
-                                System.out.println("Температура на складе: " + ConditionsOfWarehouse.TemperatureOfWarehouse);
+                                System.out.println("Температура на складе: " + conditionsOfWarehouse.getTemperatureOfWarehouse());
                                 break;
                             }
                             //Здесь конец изменений температуры Склада
                         }
+
                         break;
                     }
                     case ("Влажность"): {
@@ -63,16 +67,16 @@ public class Main {
                         switch (scanner.next()) {
                             case ("Повысить"): {
                                 TextPrinter.print(TextPrinter.MessageKey.NUMBER);
-                                ConditionsOfWarehouse.HumidityOfWarehouse = ConditionsOfWarehouse.HumidityOfWarehouse + scanner.nextInt();
+                                conditionsOfWarehouse.setHumidityOfWarehouse(conditionsOfWarehouse.getHumidityOfWarehouse() + scanner.nextInt());
                                 break;
                             }
                             case ("Понизить"): {
                                 TextPrinter.print(TextPrinter.MessageKey.NUMBER);
-                                ConditionsOfWarehouse.HumidityOfWarehouse = ConditionsOfWarehouse.HumidityOfWarehouse - scanner.nextInt();
+                                conditionsOfWarehouse.setHumidityOfWarehouse(conditionsOfWarehouse.getHumidityOfWarehouse() - scanner.nextInt());
                                 break;
                             }
                             case ("Показать Влажность"): {
-                                System.out.println("Влажность на складе: " + ConditionsOfWarehouse.HumidityOfWarehouse);
+                                System.out.println("Влажность на складе: " + conditionsOfWarehouse.getHumidityOfWarehouse());
                                 break;
                             }
                         }
@@ -90,30 +94,37 @@ public class Main {
                 while (scanner.next() != "Выход") {
                     switch (scanner.next()) {
                         case ("Добавить товар"): {
-                            conditionForProduct.ConditionsOfProduct(scanner.next(), scanner.nextDouble(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(),scanner.nextInt(),scanner.nextInt(),scanner.nextInt(), scanner.nextInt(),scanner.next());
+                            //параметры товара
+                            //conditionForProduct.ConditionsOfProduct(scanner.next(), scanner.nextDouble(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(),scanner.nextInt(),scanner.nextInt(),scanner.nextInt(), scanner.nextInt(),scanner.next());
                             products.add(conditionForProduct);
                             break;
                         }
                         case ("Посмотреть параметры товара"): {
                             switch (scanner.next()) {
                                 case ("Требуемая влажность"): {
-                                    System.out.println("Требуемая влажность для товара: " + conditionForProduct.HumidityOfProduct);
+                                    System.out.println("Требуемая влажность для товара: " + conditionForProduct.getHumidityOfProduct());
                                     break;
                                 }
                                 case ("Требуемая температура"): {
-                                    System.out.println("Требуемая температура: " + conditionForProduct.TemperatureOfProduct);
+                                    System.out.println("Требуемая температура: " + conditionForProduct.getTemperatureOfProduct());
                                     break;
                                 }
                                 case ("Размер"): {
-                                    System.out.println("Размер: " + conditionForProduct.SizeOfProduct);
+                                    System.out.println("Размер: " + "\nШирина:" + conditionForProduct.getWidthOfProduct() + "\nДлина:" + conditionForProduct.getLengthOfProduct() + "\nВысота:" + conditionForProduct.getHeightofProduct());
                                     break;
                                 }
                                 case ("Масса"): {
-                                    System.out.println("Масса: " + conditionForProduct.weightOfProduct);break;
+                                    System.out.println("Масса: " + conditionForProduct.getWeightOfProduct());
+                                    break;
                                 }
-                                case ("Дата окончания хранения"): { System.out.println("Дата окончания хранения: " + conditionForProduct.contentEndings);break;
+                                case ("Дата окончания хранения"): {
+                                    System.out.println("Дата окончания хранения: " + conditionForProduct.getContentEndings());
+                                    break;
                                 }
-                                case ("Дата начала хранения"):{System.out.println("Дата начала хранения: "+conditionForProduct.contentStart);break;}
+                                case ("Дата начала хранения"): {
+                                    System.out.println("Дата начала хранения: " + conditionForProduct.getContentStart());
+                                    break;
+                                }
                                 case ("Сколько товаров на складе: "): {
                                     //добавить возможность просмотра их местоположения и изменения его
                                     //логистика

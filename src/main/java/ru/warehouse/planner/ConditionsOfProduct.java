@@ -7,29 +7,93 @@ public class ConditionsOfProduct{
 
     private double TemperatureOfProduct;
     private int HumidityOfProduct;
-    private double SizeOfProduct;
+    private double LengthOfProduct;
+    private double WidthOfProduct;
+    private double HeightofProduct;
     private String NameOfProduct;
     private Calendar contentEndings;
     private Calendar contentStart;
     private int weightOfProduct;
     private String TypeOfProduct;
-    public void ConditionsOfProduct(String name,double Temperature, int Humidity, double length, double width, double hight,int yearEnd,int mouthEnd,int dayEnd,int yearStart,int mounthStart,int dayStart,int weightOfProduct,String TypeOfProduct) {
-        this.NameOfProduct = NameOfProduct;
-        this.TemperatureOfProduct = TemperatureOfProduct;
-        this.HumidityOfProduct = HumidityOfProduct;
-        SizeOfProduct=length*width*hight;
-        this.SizeOfProduct = SizeOfProduct;
-        contentStart.set(yearStart,mounthStart,dayStart);
-        this.contentStart=contentStart;
-        contentEndings.set(yearEnd,mouthEnd,dayEnd);
-        this.contentEndings=contentEndings;
-        this.weightOfProduct=weightOfProduct;
-        switch (TypeOfProduct){
-            case("Продукты питания"):{TypeOfProduct="Продукты питания";TypeOfProduct=this.TypeOfProduct;break;}
-            case ("Химические товары"):{TypeOfProduct="Химические товары";TypeOfProduct=this.TypeOfProduct;break;}
-            case ("Электроника"):{TypeOfProduct="Электроника";TypeOfProduct=this.TypeOfProduct;break;}
-            default:{TypeOfProduct="Не определённое";TypeOfProduct=this.TypeOfProduct;}
-        }
 
+    public double getTemperatureOfProduct() {
+        return TemperatureOfProduct;
+    }
+
+    public void setTemperatureOfProduct(double temperatureOfProduct) {
+        TemperatureOfProduct = temperatureOfProduct;
+    }
+
+    public int getHumidityOfProduct() {
+        return HumidityOfProduct;
+    }
+
+    public void setHumidityOfProduct(int humidityOfProduct) {
+        HumidityOfProduct = humidityOfProduct;
+    }
+
+    public String getNameOfProduct() {
+        return NameOfProduct;
+    }
+
+    public void setNameOfProduct(String nameOfProduct) {
+        NameOfProduct = nameOfProduct;
+    }
+
+    public Calendar getContentEndings() {
+        return contentEndings;
+    }
+
+    public void setContentEndings(Calendar contentEndings) {
+        this.contentEndings = contentEndings;
+    }
+
+    public Calendar getContentStart() {
+        return contentStart;
+    }
+
+    public void setContentStart(Calendar contentStart) {
+        this.contentStart = contentStart;
+    }
+
+    public int getWeightOfProduct() {
+        return weightOfProduct;
+    }
+
+    public void setWeightOfProduct(int weightOfProduct) {
+        this.weightOfProduct = weightOfProduct;
+    }
+
+    public String getTypeOfProduct() {
+        return TypeOfProduct;
+    }
+
+    public void setTypeOfProduct(String typeOfProduct) {
+        TypeOfProduct = typeOfProduct;
+    }
+
+    public double getLengthOfProduct() {
+        return LengthOfProduct;
+    }
+
+    public void setLengthOfProduct(double lengthOfProduct) {
+        LengthOfProduct = lengthOfProduct;
+    }
+
+    public double getWidthOfProduct() {
+        return WidthOfProduct;
+    }
+
+    public void setWidthOfProduct(double widthOfProduct) {
+        WidthOfProduct = widthOfProduct;
+    }
+
+    public double getHeightofProduct() {
+        return HeightofProduct;
+    }
+
+    public void setHeightofProduct(double heightofProduct) {
+        HeightofProduct = heightofProduct;
     }
 }
+
