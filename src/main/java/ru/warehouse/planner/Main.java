@@ -5,28 +5,46 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String... args) {
+        ConditionsOfProduct conditionForProduct = new ConditionsOfProduct();
+        ConditionsOfWarehouse conditionsOfWarehouse = new ConditionsOfWarehouse();
+
         Scanner scanner = new Scanner(System.in);
         //Первоначальные настройки параметров склада
         TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_HUMIDITY_IN_WAREHOUSE);
+        conditionsOfWarehouse.setHumidityOfWarehouse(scanner.nextInt());
         TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_TEMPERATURE_OF_WAREHOUSE);
+        conditionsOfWarehouse.setTemperatureOfWarehouse(scanner.nextDouble());
         TextPrinter.print(TextPrinter.MessageKey.SQUARE);
+        conditionsOfWarehouse.setLengthOfWarehouse(scanner.nextDouble());
+        conditionsOfWarehouse.setHeightOfWarehouse(scanner.nextDouble());
+        conditionsOfWarehouse.setWidthOfWarehouse(scanner.nextDouble());
 
-        ConditionsOfWarehouse conditionsOfWarehouse = new ConditionsOfWarehouse();
         //Все условия Склада
 
         //  conditionsOfWarehouse.ConditionsOfWarehouse(scanner.nextDouble(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble());
 
         //Здесь вносить 1 продукт ещё не посылаеться на стелаж или имеет возможность создавать несколько
         TextPrinter.print(TextPrinter.MessageKey.NAME_OF_PRODUCT);
+        conditionForProduct.setNameOfProduct(scanner.next());
         TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_TEMPERATURE_FOR_PRODUCT);
+        conditionForProduct.setTemperatureOfProduct(scanner.nextDouble());
         TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_HUMUDITY_FOR_PRODUCT);
-        TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_THE_SIZE_OF_PRODUCT);
+        conditionForProduct.setHumidityOfProduct(scanner.nextInt());
+        // переделать size
+        // TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_THE_SIZE_OF_PRODUCT);
+
         TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_DATA_OF_START);
+        // настроить внос даты начала хранения
+        // conditionForProduct.setContentStart();
         TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_DATA_OF_ENDINGS);
+        //настроить внос даты окончания хранения
+        //conditionForProduct.setContentEndings();
         TextPrinter.print(TextPrinter.MessageKey.WEIGHT_OF_PRODUCT);
+        conditionForProduct.setWeightOfProduct(scanner.nextInt());
         TextPrinter.print(TextPrinter.MessageKey.WHAT_IS_TYPE_OF_PRODUCT);
-        ConditionsOfProduct conditionForProduct = new ConditionsOfProduct();
+        conditionForProduct.setTypeOfProduct(scanner.next());
         //Все условия товара
+
 //        conditionForProduct.ConditionsOfProduct(scanner.next(), scanner.nextDouble(), scanner.nextInt(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(),scanner.nextInt(),scanner.nextInt(),scanner.nextInt(), scanner.nextInt(),scanner.next());
 
         TextPrinter.print(TextPrinter.MessageKey.GREETINGS_WHAT_IS_NEXT);
