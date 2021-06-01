@@ -4,11 +4,40 @@ package ru.warehouse.planner;
 public class Pallet {
     private int Size;//размер Палета тоесть какой размер товаров может поместиться
     private int Fullness=0;
- int LimitOFWeight =1500;
+    private int LimitOFWeight =1500;
    //здесь по идеи я прописал сколько поместиться на палет(объём,масса) товары повышают массу где лимит 1500
+
+    public int getSize() {
+        return Size;
+    }
+
+    public void setSize(int size) {
+        Size = size;
+    }
+
+    public int getFullness() {
+        return Fullness;
+    }
+
+    public void setFullness(int fullness) {
+        Fullness = fullness;
+    }
+
+    public int getLimitOFWeight() {
+        return LimitOFWeight;
+    }
+
+    public void setLimitOFWeight(int limitOFWeight) {
+        LimitOFWeight = limitOFWeight;
+    }
+
+
+
+/*
     public  Pallet(int lenght,int width){Size=lenght*width;}
     public void FullnessOfRack(int SizeOfProduct){Fullness=Size-SizeOfProduct;}
     public void LimitOfWeight(int weightOfProduct){if(LimitOFWeight-weightOfProduct>0){ LimitOFWeight=LimitOFWeight-weightOfProduct;}}
     public void AddToPallet(int weightOfProduct){if(Fullness+weightOfProduct!=LimitOFWeight){Fullness=Fullness+weightOfProduct;}}
+*/
 
 }
